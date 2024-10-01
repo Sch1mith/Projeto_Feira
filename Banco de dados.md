@@ -5,9 +5,11 @@ CREATE DATABASE Projeto;
 
 CREATE table tbpoint (
     id int not null primary KEY AUTO_INCREMENT,
-    nome varchar(50) not null,
+    nome varchar(50),
+    telefone varchar (11),
     tipo_lixo varchar(40) not null,
     UF varchar(2) not null,
     cidade varchar(30) not null,
     bairro varchar(30) not null,
+    cep varchar(9)not null,
     endereco varchar(80) not null);
