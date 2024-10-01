@@ -1,4 +1,4 @@
-# Projeto_Feira
+# Banco de dados od projeto (pode ser alterado)
 
 CREATE DATABASE Projeto;
 
