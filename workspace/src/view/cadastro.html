@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cadastro-container">
+        <form action="cadastro.php" method="POST">
+            <h2>Cadastro</h2>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" required>
+
+            <label for="tipo_lixo" >Tipo de Lixo aceito:</label>
+            <input type="text" id="tipo_lixo" name="tipo de lixo aceito" required>
+
+            <label for="UF">UF:</label>
+            <input type="text" id="UF" name="UF" required>
+
+            <label for="cidade">cidade:</label>
+            <input type="text" id="cidade" name="cidade" required>
+
+            <label for="bairro">bairro:</label>
+            <input type="text" id="bairro" name="bairro" required>
+
+            <label for="cep">cep:</label>
+            <input type="text" id="cep" name="cep" required>
+
+            <label for="endereco">Endereco:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
