@@ -3,7 +3,7 @@
 CREATE DATABASE projeto;
 
 
-CREATE table tbpoint (
+CREATE table ecoponto (
     id int not null primary KEY AUTO_INCREMENT,
     nome varchar(50),
     telefone varchar (11),
