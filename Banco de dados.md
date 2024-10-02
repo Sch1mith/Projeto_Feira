@@ -1,6 +1,6 @@
 # Banco de dados od projeto (pode ser alterado)
 
-CREATE DATABASE Projeto;
+CREATE DATABASE projeto;
 
 
 CREATE table tbpoint (
