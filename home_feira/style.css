@@ -9,7 +9,7 @@ body {
     overflow: hidden;
 }
 
-.container {
+.carrosel {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -20,12 +20,12 @@ body {
     box-shadow: 0 30px 50px #dbdbdb;
 }
 
-.container .slide {
+.carrosel .slide {
     position: relative;
     height: 100%;
 }
 
-.container .slide .item {
+.carrosel .slide .item {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -39,7 +39,7 @@ body {
     transition: 0.5s ease-in-out; /* Transição suave */
 }
 
-.container .slide .item:nth-child(1) {
+.carrosel .slide .item:nth-child(1) {
     display: block; /* Exibe apenas o primeiro item inicialmente */
 }
 
