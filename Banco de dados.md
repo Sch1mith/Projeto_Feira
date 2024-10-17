@@ -12,4 +12,12 @@ CREATE table ecoponto (
     cidade varchar(30) not null,
     bairro varchar(30) not null,
     cep varchar(9)not null,
-    endereco varchar(80) not null);
+    endereco varchar(80) not null
+);
+
+//color pallets
+https://colorhunt.co/palette/fff7d1ffecc8ffd09bffb0b0
+bege rosa
+
+https://colorhunt.co/palette/1a363640534c677d6ad6bd98
+bege verde    
