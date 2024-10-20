@@ -7,26 +7,47 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <div class="cadastre-se-container">
+    <div class="form">
+       
         <form action="cadastre-se.php" method="POST">
-            <h2>Cadastre-se</h2>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
 
-            <label for="sobrenome">Sobrenome:</label>
-            <input type="text" id="sobrenome" name="sobrenome" required>
+            <div class="title">Bem-Vindo</div>
+            <div class="subtitle">Vamos criar a sua conta!</div>
 
-            <label for="telefone" >Telefone:</label>
-            <input type="text" id="telefone" name="telefone" required>
-
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required>
-
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" required>
-
-            <button type="submit">Cadastrar</button>
-        </form>
+            
+            <div class="input-container ic1">
+                <input placeholder="" type="text" class="input" id="nome">
+                <div class="cut"></div>
+                <label class="iLabel" for="nome">Nome</label>
+              </div>
+        
+              <div class="input-container ic2">
+                <input placeholder="" type="text" class="input" id="sobrenome">
+                <div class="cut"></div>
+                <label class="iLabel" for="sobrenome ">Sobrenome</label>
+              </div>
+      
+              <div class="input-container ic2">
+                <input placeholder="" type="text" class="input" id="telefone">
+                <div class="cut"></div>
+                <label class="iLabel" for="telefone">Telefone</label>
+              </div>
+      
+              <div class="input-container ic2">
+                <input placeholder="" type="text" class="input" id="email">
+                <div class="cut cut-short"></div>
+                <label class="iLabel" for="email">Email</label>
+              </div>
+      
+              <div class="input-container ic2">
+                <input placeholder="" type="text" class="input" id="cidade">
+                <div class="cut"></div>
+                <label class="iLabel" for="cidade">Cidade</label>
+              </div>
+      
+              <button class="submit" type="text">cadastrar</button>
+            </div> 
     </div>
+
 </body>
 </html>
