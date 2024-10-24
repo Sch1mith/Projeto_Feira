@@ -21,3 +21,6 @@ bege rosa
 
 https://colorhunt.co/palette/1a363640534c677d6ad6bd98
 bege verde    
+
+https://colorhunt.co/palette/e4c59eaf8260803d3b322c2b
+bege marrom
