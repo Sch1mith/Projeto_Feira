@@ -1,252 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
 
-        <!-- Bootstrap CSS v5.2.1 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-        <!--Font Awesome-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-        <!--CSS-->
-        <link rel="stylesheet" href="main.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        <!-- se o css local não estiver conectando, style deve ser feito aqui-->
-        <style>
-            .container-dois{
-               background-color: #1A3636;
-            }
+    <!--CSS-->
+    <link rel="stylesheet" href="conteudo.css">
 
-            .nav .nav-link {
+    <!-- se o css local não estiver conectando, style deve ser feito aqui-->
+    <style>
+        .container-dois {
+            background-color: #1A3636;
+        }
+
+        .nav .nav-link {
             color: #FFD09B;
-            }
+        }
 
-            .nav .nav-link.active {
+        .nav .nav-link.active {
             color: #FFB0B0 !important;
             background-color: #40534C;
-            border-color: antiquewhite;
-            }
+            border-color: #FFECC8;
+        }
 
-            .nav .nav-link:hover {
+        .nav .nav-link:hover {
             color: #FFF7D1;
-            border-color: antiquewhite;
-            }
+            border-color: #FFECC8;
+        }
 
-            .carrosel{
-                height: 700px;
-                background-color: aliceblue;
-            }
+        .carrosel {
+            height: 500px;
+            background-color: #FFFDF1;
+            border: #AF8260, solid, 3px;
+        }
 
-            .coluna{
-                margin-top: 50px;
-                margin-right: 50px;
-                margin-left: 50px;
-            }
+        .coluna {
+            margin-top: 28px;
+            margin-right: 50px;
+            margin-left: 50px;
+        }
 
-            .custom-flex-center {
-                display: flex;
-                justify-content: left;
-                align-items: left;
-                height: 20%;
-                position: absolute;
-                width: 50%;
-                top: 100px;
-                left: 10px
-            }
-        </style>
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Mukta:wght@300;400;500;700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        .custom-flex-center {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            height: 20%;
+            position: absolute;
+            width: 40%;
+            top: 30px;
+            left: 22px
+        }
 
-    </head>    
+        .carrosel-h1 {
+            font-family: "Quicksand", Arial;
+            font-optical-sizing: auto;
+            font-weight: 500 !important;
+            font-style: normal;
+            color: #1A3636 !important;
+        }
 
-    <body>
-        <!--botões navbar-->
-        <div class="container-fluid container-dois text-center">
-            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button
-                        class="nav-link active"
-                        id="home-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#home"
-                        type="button"
-                        role="tab"
-                        aria-controls="home"
-                        aria-selected="true"
-                    >
+        .row-card {
+            margin-top: 10px;
+            margin-left: 70px
+        }
+
+        .card-image {
+            height: 150px;
+        }
+
+        .info-text {
+            margin-top: 10px;
+            font-family: "Quicksand", Arial;
+            font-weight: 400 !important;
+            color: #FFD09B !important;
+            text-decoration-line: underline;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            border: #AF8260, solid, 2px;
+            background-color: #1a3636;
+            /* Change background color */
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Mukta:wght@300;400;500;700&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!--botões navbar-->
+    <div class="container-fluid container-dois text-center">
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                    role="tab" aria-controls="home" aria-selected="true">
                     <i class="fa-solid fa-home"></i>
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button
-                        class="nav-link"
-                        id="lixo_organico"
-                        data-bs-toggle="tab"
-                        data-bs-target="#lixo_organico"
-                        type="button"
-                        role="tab"
-                        aria-controls="lixo_organico"
-                        aria-selected="false"
-                    >
-                        Lixo Orgânico
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button
-                        class="nav-link"
-                        id="lixo_reciclavel"
-                        data-bs-toggle="tab"
-                        data-bs-target="#lixo_reciclavel"
-                        type="button"
-                        role="tab"
-                        aria-controls="lixo_reciclavel"
-                        aria-selected="false"
-                    >
-                        Lixo  Reciclavel
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button
-                        class="nav-link"
-                        id="lixo_comercial"
-                        data-bs-toggle="tab"
-                        data-bs-target="#lixo_comercial"
-                        type="button"
-                        role="tab"
-                        aria-controls="lixo_comercial"
-                        aria-selected="false"
-                    >
-                        Lixo Comercial
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button
-                        class="nav-link"
-                        id="lixo_hospitalar"
-                        data-bs-toggle="tab"
-                        data-bs-target="#lixo_hospitalar"
-                        type="button"
-                        role="tab"
-                        aria-controls="lixo_hospitalar"
-                        aria-selected="false"
-                    >
-                        Lixo Hospitalar
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button
-                        class="nav-link"
-                        id="lixo_eletronico"
-                        data-bs-toggle="tab"
-                        data-bs-target="#lixo_eletronico"
-                        type="button"
-                        role="tab"
-                        aria-controls="lixo_eletronico"
-                        aria-selected="false"
-                    >
-                        Lixo Eletrônico
-                    </button>
-                </li>
-            </ul>
-        </div>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="organico-tab" data-bs-toggle="tab" data-bs-target="#lixo_organico"
+                    type="button" role="tab" aria-controls="lixo_organico" aria-selected="false">
+                    Lixo Orgânico
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="reciclavel-tab" data-bs-toggle="tab" data-bs-target="#lixo_reciclavel"
+                    type="button" role="tab" aria-controls="lixo_reciclavel" aria-selected="false">
+                    Lixo Reciclavel
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="verde-tab" data-bs-toggle="tab" data-bs-target="#lixo_verde" type="button"
+                    role="tab" aria-controls="lixo_verde" aria-selected="false">
+                    Lixo Verde
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="perigoso-tab" data-bs-toggle="tab" data-bs-target="#lixo_perigoso"
+                    type="button" role="tab" aria-controls="lixo_perigoso" aria-selected="false">
+                    Lixo Perigoso
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="eletronico-tab" data-bs-toggle="tab" data-bs-target="#lixo_eletronico"
+                    type="button" role="tab" aria-controls="lixo_eletronico" aria-selected="false">
+                    Lixo Eletrônico
+                </button>
+            </li>
+        </ul>
+    </div>
 
     <!-- Tab panes -->
     <div class="tab-content">
-        <div
-            class="tab-pane active"
-            id="home"
-            role="tabpanel"
-            aria-labelledby="home-tab"
-        >
-        <div class="container-fluid container-tres text-center">
-            <div class="row">
-                <div class="col coluna">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item carrosel active">
-                            <img src="../FOTOSLIXO/organico.png" class="d-block w-100" alt="...">
-                            <div class="carousel-caption custom-flex-center d-none d-md-block">
-                                <h1>dadada</h1>
+        <!--home-->
+        <div class="tab-pane" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <!--carrosel-->
+            <div class="container-fluid container-tres text-center">
+                <div class="row">
+                    <div class="col coluna">
+                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item carrosel active">
+                                    <img src="../src/organico.png" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption custom-flex-center d-none d-md-block">
+                                        <h1 class="carrosel-h1">dadada</h1>
+                                    </div>
+                                </div>
+                                <div class="carousel-item carrosel">
+                                    <img src="../src/pilha de roupas.webp" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption custom-flex-center d-none d-md-block">
+                                        <h1>ddede</h1>
+                                    </div>
+                                </div>
+                                <div class="carousel-item carrosel">
+                                    <img src="../src/lixo_reciclavel.png" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption custom-flex-center d-none d-md-block">
+                                        <h1>gjgjgj</h1>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                          <div class="carousel-item carrosel">
-                            <img src="../FOTOSLIXO/lixohospitalar-removebg-preview.png" class="d-block w-100" alt="...">
-                          </div>
-                          <div class="carousel-item carrosel">
-                            <img src="../FOTOSLIXO/Novo Projeto.png" class="d-block w-100" alt="...">
-                          </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
+                    </div>
+                </div>
+                <!--fim carrosel-->
+                <!--cards-->
+                <h3 class="info-text">INFORMAÇÕES SOBRE LIXO</h3>
+                <div class="row row-card">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../src/pilha de roupas.webp" class="card-img-top card-image" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Fast Fashion</h5>
+                                <p class="card-text">Cerca de 59 mil TONELADAS de roupa chegam nos portos do Chile todos
+                                    os anos. Desses 39 mil vão para aterros no deserto do Atacama</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../src/lixo_hospitalar.png" class="card-img-top card-image" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../src/lixo_verde.png" class="card-img-top card-image" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Fim dos cards-->
+        </div>
+        <!--Lixo Orgânico-->
+        <div class="tab-pane active" id="lixo_organico" role="tabpanel" aria-labelledby="organico-tab">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        Column
+                    </div>
+                    <div class="col">
+                        Column
+                    </div>
+                    <div class="col">
+                        Column
+                    </div>
                 </div>
             </div>
         </div>
+        <!--Lixo Reciclavel-->
+        <div class="tab-pane" id="lixo_reciclavel" role="tabpanel" aria-labelledby="reciclavel-tab">
+
         </div>
-        <div
-            class="tab-pane"
-            id="profile"
-            role="tabpanel"
-            aria-labelledby="profile-tab"
-        >
- 
+        <!--Lixo verde-->
+        <div class="tab-pane" id="lixo_verde" role="tabpanel" aria-labelledby="verde-tab">
+
         </div>
-        <div
-            class="tab-pane"
-            id="messages"
-            role="tabpanel"
-            aria-labelledby="messages-tab"
-        >
- 
+        <!--Lixo Perigoso-->
+        <div class="tab-pane" id="lixo_perigoso" role="tabpanel" aria-labelledby="perigoso-tab">
+
+        </div>
+        <!--Lixo Eletrônico-->
+        <div class="tab-pane" id="lixo_eletronico" role="tabpanel" aria-labelledby="eletronico-tab">
+
         </div>
     </div>
 
     <!-- Bootstrap JavaScript Libraries -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"
-    ></script>
+        crossorigin="anonymous"></script>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"
-    ></script>
+        crossorigin="anonymous"></script>
 
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/2e9951a3e8.js" crossorigin="anonymous"></script>
 
     <!--função para include-->
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous">
-    </script>
-    <script> 
-        $(function(){
-        $("#header").load("header/header.html"); 
-        $("#footer").load("footer.html"); 
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("header/header.html");
+            $("#footer").load("footer.html");
         });
     </script>
 
-    </body>
+</body>
+
 </html>
