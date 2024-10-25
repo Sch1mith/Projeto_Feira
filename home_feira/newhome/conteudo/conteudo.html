@@ -68,8 +68,9 @@
         }
 
         .row-card {
+            flex: 1;
             margin-top: 10px;
-            margin-left: 70px
+            margin-left: 70px;
         }
 
         .card-image {
@@ -90,6 +91,62 @@
             background-color: #1a3636;
             /* Change background color */
         }
+
+        .img-pages {
+            height: 50vh;
+            width: 50vh;
+        }
+
+        .row-pages-top {
+            margin-top: 15vh;
+            background-color: #E4C59E;
+            border-radius: 10vh;
+            border: #40534C,solid,5px;
+        }
+
+        .row-pages-bottom {
+            margin-top: 5vh;
+        }
+
+        .p-pages {
+            padding-top: 3vh;
+            font-family: "Quicksand", Arial;
+            font-size: x-large;
+            font-weight: 500;
+            color: #322C2B !important;
+        }
+
+        .col-bottom{
+            background-color: #E4C59E;
+            border-radius: 10vh;
+            border: #40534C,solid,5px;
+        }
+
+        .p-pages-dois {
+            padding-top: 3vh;
+            font-family: "Quicksand", Arial;
+            font-size: larger;
+            font-weight: 500;
+            color: #322C2B !important;
+        }
+
+        .h5-exemplo {
+            font-family: "Quicksand", Arial;
+            color: #803D3B;
+            font-weight: 700;
+            margin-left: 5vh;
+            margin-top: 2vh;
+        }
+
+        .lista{
+            text-align: left !important;
+            margin-top: 5vh;
+        }
+
+        .itens{
+            margin-bottom: 3vh;
+        }
+
     </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,13 +162,13 @@
     <div class="container-fluid container-dois text-center">
         <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
                     role="tab" aria-controls="home" aria-selected="true">
                     <i class="fa-solid fa-home"></i>
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="organico-tab" data-bs-toggle="tab" data-bs-target="#lixo_organico"
+                <button class="nav-link" id="organico-tab" data-bs-toggle="tab" data-bs-target="#lixo_organico"
                     type="button" role="tab" aria-controls="lixo_organico" aria-selected="false">
                     Lixo Orgânico
                 </button>
@@ -146,7 +203,7 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <!--home-->
-        <div class="tab-pane" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <!--carrosel-->
             <div class="container-fluid container-tres text-center">
                 <div class="row">
@@ -224,14 +281,32 @@
             <!--Fim dos cards-->
         </div>
         <!--Lixo Orgânico-->
-        <div class="tab-pane active" id="lixo_organico" role="tabpanel" aria-labelledby="organico-tab">
+        <div class="tab-pane" id="lixo_organico" role="tabpanel" aria-labelledby="organico-tab">
             <div class="container text-center">
-                <div class="row">
+                <div class="row row-pages-top">
                     <div class="col">
-                        Column
+                        <img class="img-pages" src="../src/organico.png" alt="">
                     </div>
                     <div class="col">
-                        Column
+                        <p class="p-pages">O lixo orgânico é considerado como não reciclavel, e pode ser descartado
+                            junto com o lixo comum ou transformado em compostagem para ser usado como adubo</p>
+                    </div>
+                    <div class="col">
+                        <h5 class="h5-exemplo">Exemplos</h5>
+                        <ul class="lista">
+                            <li class="itens">Casca de Fruta</li>
+                            <li class="itens">Pedaçõs de Carne</li>
+                            <li class="itens">Borras de Café</li>
+                            <li class="itens">Flores Murchas</li>
+                            <li class="itens">Guardanapo de papel usado</li>
+                            <li class="itens">Papel higiênico (em alguns casos)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row row-pages-bottom">
+                    <div class="col col-bottom">
+                        <h5 class="h5-exemplo">Como realizar o descarte</h5>
+                        <p class="p-pages-dois">Para descartar lixo organico é texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
                     </div>
                     <div class="col">
                         Column
@@ -268,17 +343,6 @@
 
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/2e9951a3e8.js" crossorigin="anonymous"></script>
-
-    <!--função para include-->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
-        </script>
-    <script>
-        $(function () {
-            $("#header").load("header/header.html");
-            $("#footer").load("footer.html");
-        });
-    </script>
 
 </body>
 
