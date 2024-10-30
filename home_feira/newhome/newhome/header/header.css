@@ -1,0 +1,26 @@
+h1{
+    font-family: "Quicksand", Arial;
+    font-optical-sizing: auto;
+    font-weight: 500 !important;
+    font-style: normal;
+    color: #1A3636 !important;
+}
+
+.container-um{
+    padding: 60px;
+    background-color: #FEFAE0;
+}
+
+.row{
+    padding: 20px;
+}
+
+.form-control{
+    width: 100%;
+    border: 2px solid #75b798 !important;
+}
+
+.form-control:focus {
+    border-color: #A6B37D !important;
+    box-shadow: 0 0 7px #75b798 !important;
+}
