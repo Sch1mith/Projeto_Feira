@@ -1,0 +1,11 @@
+footer{
+    columns: 4;
+    background-color: black;
+    color: white;
+    position: absolute;
+    width: 100%;
+
+}
+body{
+    display: grid;
+}
