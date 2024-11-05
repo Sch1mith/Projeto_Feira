@@ -15,6 +15,12 @@ CREATE table ecoponto (
     endereco varchar(80) not null
 );
 
+CREATE table lixo (
+    id int not null primary KEY AUTO_INCREMENT,
+    tipo varchar(17) not null,
+    nome varchar(250) not null,
+);
+
 //color pallets
 https://colorhunt.co/palette/fff7d1ffecc8ffd09bffb0b0
 bege rosa
