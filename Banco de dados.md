@@ -18,7 +18,7 @@ CREATE table ecoponto (
 CREATE table lixo (
     id int not null primary KEY AUTO_INCREMENT,
     tipo varchar(17) not null,
-    nome varchar(250) not null,
+    nome varchar(250) not null
 );
 
 //color pallets
