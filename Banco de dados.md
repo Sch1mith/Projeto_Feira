@@ -21,6 +21,8 @@ CREATE table lixo (
     nome varchar(250) not null
 );
 
+google maps api snippnets --> https://console.cloud.google.com/google/maps-apis/build;filters=%7B"platformFilters":%5B"WEB"%5D,"useCaseFilters":%5B"CURRENT_LOCATION","VISUALIZE_DATA"%5D,"codeTypeFilters":%5B%5D%7D?hl=pt-br&project=projeto-feira-439802
+
 //color pallets
 https://colorhunt.co/palette/fff7d1ffecc8ffd09bffb0b0
 bege rosa
