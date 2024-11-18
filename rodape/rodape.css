@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+footer {
+    background-color: #1A3636;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #FFD09B;
+    position: absolute;
+    padding-top: 30px;
+    padding-left: 0px;
+    
+
+}
+#rodape2{   
+    display: grid;
+    justify-content: center;
+    background-color: #677D6A;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    margin: 0;  
+    bottom: 0%;
+    color: #D6BD98;
+    position: fixed;
+
+}
+#coluna4{
+    padding: 0% !important;
+    padding-right: 15%;
+    margin-right: 0;
+}
+#coluna1{
+    padding-bottom: 60%;
+    padding-left: 15%;
+    
+}
+#coluna2{
+    margin-left: 60px;
+}
