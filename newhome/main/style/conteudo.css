@@ -20,8 +20,8 @@
 }
 
 .carrosel {
-    height: 490px;
-    background-color: #FFFDF1;
+    height: 60vh !important;
+    background-color: #FFECC8 !important;
     border: #AF8260, solid, 3px;
 }
 
@@ -39,6 +39,42 @@
 .carrosel-h1 {
     font-family: "Quicksand", Arial;
     font-optical-sizing: auto;
+    font-weight: 500 !important;
+    font-style: normal;
+    color: #1A3636 !important;
+}
+
+.custom-flex-left {
+    display: flex;
+    justify-content: right !important;
+    align-items: right !important;
+    height: 20%;
+}
+
+.carrosel-img {
+    position: relative;
+    height: 30vh;
+    width: 50vh;
+    margin-bottom: 5%;
+    margin-top: 1%;
+    margin-left: 40%;
+    border: #322C2B, solid, 2px;
+}
+
+.custom-flex-bottom {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 10%;
+    position: absolute;
+    top: 60px !important;
+    left: 22px
+}
+
+.carrosel-p {
+    font-family: "Quicksand", Arial;
+    font-optical-sizing: auto;
+    margin-top: 20px;
     font-weight: 500 !important;
     font-style: normal;
     color: #1A3636 !important;
