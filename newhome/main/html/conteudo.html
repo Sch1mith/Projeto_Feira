@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Mukta:wght@300;400;500;700&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <!--style do mapa-->
+    <style>
+        #map1,
+        #map2,
+        #map3 {
+            height: 100%;
+        }
+    </style>
+
+    <!--mapa-->
+    <script>
+        async function initMap() {
+            const local = { lat: -23.538076383597282, lng: -46.46189247036771 }; // First map location
+
+            const { Map } = await google.maps.importLibrary("maps");
+            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+            // Create first map
+            const map1 = new Map(document.getElementById("map1"), {
+                center: local,
+                zoom: 14,
+                mapId: 'd98a6df342c18eb2',
+                disableDefaultUI: true,
+                zoomControl: true,
+            });
+
+            // Create second map
+            const map2 = new Map(document.getElementById("map2"), {
+                center: local,
+                zoom: 14,
+                mapId: 'd98a6df342c18eb2',
+                disableDefaultUI: true,
+                zoomControl: true,
+            });
+
+            // Create third map
+            const map3 = new Map(document.getElementById("map3"), {
+                center: local,
+                zoom: 14,
+                mapId: 'd98a6df342c18eb2',
+                disableDefaultUI: true,
+                zoomControl: true,
+            });
+
+            const infoWindow = new google.maps.InfoWindow();
+
+            // Handle geolocation for the first map
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                        };
+                        map1.setCenter(pos);
+                        map2.setCenter(pos);
+                        map3.setCenter(pos);
+                    },
+                    () => {
+                        handleLocationError(true, infoWindow, map1.getCenter());
+                        handleLocationError(true, infoWindow, map2.getCenter());
+                        handleLocationError(true, infoWindow, map3.getCenter());
+                    }
+                );
+            } else {
+                handleLocationError(false, infoWindow, map1.getCenter());
+                handleLocationError(false, infoWindow, map2.getCenter());
+                handleLocationError(false, infoWindow, map3.getCenter());
+            }
+
+            const markers = [
+                { lat: -23.54982324201291, lng: -46.525064535582544, title: 'aricanduva astarte' },
+                { lat: -23.588202270006775, lng: -46.50891444666432, title: 'vila nova york' },
+                { lat: -23.536933500938847, lng: -46.54732720328706, title: 'viaduto eng.° Alberto Badra' },
+                { lat: -23.595336278464497, lng: -46.746721567449015, title: 'jardim maria do carmo' },
+                { lat: -23.59933708473178, lng: -46.72142897815588, title: 'giovani gronchi' },
+                { lat: -23.5876375495963, lng: -46.75457031516011, title: 'jardim jaqueline' },
+                { lat: -23.575190447869854, lng: -46.7652718295265, title: 'politécnica' },
+                { lat: -23.633903872128812, lng: -46.758006055669306, title: 'olinda' },
+                { lat: -23.663817270534135, lng: -46.7768412096711, title: 'santos dias' },
+                { lat: -23.671847400726445, lng: -46.792269154125286, title: 'parque fernanda' },
+                { lat: -23.638087235015828, lng: -46.74160616625145, title: 'vila das belezas' },
+                { lat: -23.62296949163627, lng: -46.725190233973386, title: 'paraisópolis' },
+                { lat: -23.66194264912046, lng: -46.72253234746301, title: 'cidade saudavel' },
+                { lat: -23.491604620422823, lng: -46.65578802916724, title: 'parque peruche' },
+                { lat: -23.47202987539443, lng: -46.66987454747133, title: 'vila nova cachoeirinha' },
+                { lat: -23.49373617439376, lng: -46.67151110328913, title: 'vila santa maria' },
+                { lat: -23.454648073961202, lng: -46.6595213186357, title: 'jardim antártica' },
+                { lat: -23.695239091806464, lng: -46.65165010698778, title: 'ademar cupecê' },
+                { lat: -23.57358555752143, lng: -46.40015877711881, title: 'inacio monteiro' },
+                { lat: -23.592967758674053, lng: -46.41552425488143, title: 'nascer do sol' },
+                { lat: -23.58603846281423, lng: -46.39648454746625, title: 'barro branco' },
+                { lat: -23.50317048776799, lng: -46.48442473212468, title: 'boturussu' },
+                { lat: -23.523114755394708, lng: -46.48286428246718, title: 'jardim são nicolau' },
+                { lat: -23.46972260147551, lng: -46.67497664932527, title: 'vila rica' },
+                { lat: -23.50557903045723, lng: -46.70446334746972, title: 'freguesia do ó' },
+                { lat: -23.48597333967452, lng: -46.69529748942138, title: 'bandeirantes' },
+                { lat: -23.55507461639305, lng: -46.413001205140176, title: 'guaiaponto' },
+                { lat: -23.530495064342695, lng: -46.406099132123536, title: 'lajeado' },
+                { lat: -23.56529170138255, lng: -46.3983840763035, title: 'jardim sao paulo' },
+                { lat: -23.568939169920576, lng: -46.608375089794464, title: 'tereza cristina' },
+                { lat: -23.62368727346548, lng: -46.60563700513712, title: 'vila das mercês' },
+                { lat: -23.600023700773875, lng: -46.59691668237776, title: 'heliópolis' },
+                { lat: -23.599603310298875, lng: -46.62329498979311, title: 'santa cruz' },
+                { lat: -23.50821253339896, lng: -46.416811754579506, title: 'mãe preta' },
+                { lat: -23.501023206295535, lng: -46.38938444746997, title: 'pesqueiro' },
+                { lat: -23.51421674464596, lng: -46.42129053583215, title: 'flamingo' },
+                { lat: -23.497349340855838, lng: -46.37089356713524, title: 'moreira' },
+                { lat: -23.520516329875175, lng: -46.42897610514164, title: 'vuruça' },
+                { lat: -23.56214192345951, lng: -46.49933106281246, title: 'cidade líder' },
+                { lat: -23.598915610324454, lng: -46.53447863397457, title: 'São Lucas' },
+                { lat: -23.5820846396294, lng: -46.5713374657739, title: 'Anhaia Mello' },
+                { lat: -23.592701537868034, lng: -46.63497287815611, title: 'Vila Mariana' },
+                { lat: -23.594324493547887, lng: -46.622208047465925, title: 'Saioá' },
+                { lat: -23.611560849889344, lng: -46.644525691646585, title: 'Mirandópolis' },
+                { lat: -23.485521778201115, lng: -46.56529320514317, title: 'Vila Sabrina' },
+                { lat: -23.516728761940627, lng: -46.58394190514184, title: 'Vila Maria' },
+                { lat: -23.516948550797142, lng: -46.60042900514184, title: 'Vila Guilherme' },
+                { lat: -23.549460608484043, lng: -46.628390214469775, title: 'Cambuci' },
+                { lat: -23.524516408351626, lng: -46.642416730986504, title: 'Barra Funda' },
+                { lat: -23.521116717755795, lng: -46.62777490514175, title: 'Armênia' },
+                { lat: -23.555999600613532, lng: -46.6370930609588, title: 'Liberdade' },
+                { lat: -23.562055903723333, lng: -46.64587737922207, title: 'Glicério' },
+                { lat: -23.605383718839956, lng: -46.4969079628104, title: 'Teotônio Vilela' },
+                { lat: -23.62330132442862, lng: -46.509238565788635, title: 'Sitio Oratório' },
+                { lat: -23.50649631532205, lng: -46.46222602144665, title: 'Pedro Nunes' },
+                { lat: -23.509906130003902, lng: -46.43280965567485, title: 'Itaqueruna' },
+                { lat: -23.490439881184873, lng: -46.39430931686644, title: 'Carlito Maia' },
+                { lat: -23.513893657927976, lng: -46.45669879192444, title: 'Imperador' },
+                { lat: -23.605373868961745, lng: -46.45181757588272, title: 'Iguatemi' },
+                { lat: -23.57912380562445, lng: -46.495463808015685, title: 'São Mateus' },
+                { lat: -23.628490016931035, lng: -46.446579993570495, title: 'Lima Bonfante' },
+                { lat: -23.627277710551844, lng: -46.46216452190331, title: 'Cipoaba' },
+                { lat: -23.62819639316677, lng: -46.68547147564341, title: 'Vicente Rao' },
+                { lat: -23.635533863991803, lng: -46.7134999301457, title: 'Alceu Maynard de Araújo' },
+                { lat: -23.467043315809935, lng: -46.610085320489226, title: 'Tucuruvi' },
+                { lat: -23.511228877174055, lng: -46.621985621076774, title: 'Santana' },
+                { lat: -23.44230888967541, lng: -46.749347096632725, title: 'Alexios Jafet' },
+                { lat: -23.43950566579221, lng: -46.74029391755697, title: 'Voith' },
+                { lat: -23.477494838461723, lng: -46.718232714789764, title: 'Vigário Godói' },
+                { lat: -23.492231799704847, lng: -46.72193975851571, title: 'Cônego José Salomon' },
+                { lat: -23.55700466642433, lng: -46.710360038124506, title: 'Alto de Pinheiros' },
+                { lat: -23.558276828656783, lng: -46.68751094746741, title: 'Vila Madalena' },
+                { lat: -23.597955308180648, lng: -46.69131639100398, title: 'Pinheiros' },
+                { lat: -23.432901574786523, lng: -46.792104531659966, title: 'Jardim Santa Fé' },
+                { lat: -23.409106020700786, lng: -46.750718573481606, title: 'Recanto dos Humildes' },
+                { lat: -23.550492415482317, lng: -46.522360747467815, title: 'Vila Dalila' },
+                { lat: -23.548984690258163, lng: -46.48323286281301, title: 'COHAB' },
+                { lat: -23.539115082144328, lng: -46.515736533977076, title: 'Vila Talarico' },
+                { lat: -23.53915263796822, lng: -46.50503610514081, title: 'Vila Matilde' },
+                { lat: -23.550590804449698, lng: -46.49493736281299, title: 'Gamelinha' },
+                { lat: -23.534054117747683, lng: -46.49121374330906, title: 'Franquinho' },
+                { lat: -23.50210359573869, lng: -46.52783104139423, title: 'Cangaíba' },
+                { lat: -23.507866592382477, lng: -46.53633693913363, title: 'Tiquatira' },
+                { lat: -23.531274758921565, lng: -46.525443233977434, title: 'Penha I' },
+                { lat: -23.5322801502732, lng: -46.55149612259726, title: 'Vila Luisa' },
+                { lat: -23.54310096421947, lng: -46.593756047468126, title: 'Belém' },
+                { lat: -23.546318187514164, lng: -46.607275505852144, title: 'Moóca' },
+                { lat: -23.525003965563933, lng: -46.61033586861054, title: 'Pari' },
+                { lat: -23.538981932966625, lng: -46.62215306095954, title: 'Mendes Caldeira' },
+                { lat: -23.529069655481923, lng: -46.583143668553426, title: 'Água Rasa' },
+                { lat: -23.55300359617552, lng: -46.62474533802561, title: 'Brás' },
+                { lat: -23.529894001077015, lng: -46.583089405141294, title: 'Tatuapé' },
+                { lat: -23.504007595670824, lng: -46.50942163040909, title: 'Bresser' },
+                { lat: -23.669552358266827, lng: -46.73614240513514, title: 'Piraporinha' },
+                { lat: -23.5162936501126, lng: -46.74194058979687, title: 'Vila Jaguara' },
+                { lat: -23.52416231493522, lng: -46.67047976736861, title: 'Viad. Antártica' },
+                { lat: -23.632278662411295, lng: -46.630554805136775, title: 'Imigrantes' },
+                { lat: -23.652356559128418, lng: -46.649867037322245, title: 'Jabaquara' },
+                { lat: -23.548624695999575, lng: -46.43634450514051, title: 'Cohab 2' },
+                { lat: -23.52081641681119, lng: -46.46356171863287, title: 'Parque Guarani' },
+                { lat: -23.578912771301695, lng: -46.48612630449288, title: 'Parque do Carmo' },
+                { lat: -23.558986998484414, lng: -46.48865114746749, title: 'Osvaldo Valle Cordeiro' },
+            ];
+
+            markers.forEach(function (markerData) {
+                const iconElement = document.createElement('img');
+                iconElement.src = '../../src/map_marker.png';
+                iconElement.style.width = '40px';
+                iconElement.style.height = '40px';
+
+                const advancedMarker = new google.maps.marker.AdvancedMarkerElement({
+                    position: { lat: markerData.lat, lng: markerData.lng },
+                    map: map1,
+                    content: iconElement,
+                    title: markerData.title,
+                });
+            });
+
+            markers.forEach(function (markerData) {
+                const iconElement = document.createElement('img');
+                iconElement.src = '../../src/map_marker.png';
+                iconElement.style.width = '40px';
+                iconElement.style.height = '40px';
+
+                const advancedMarker = new google.maps.marker.AdvancedMarkerElement({
+                    position: { lat: markerData.lat, lng: markerData.lng },
+                    map: map2,
+                    content: iconElement,
+                    title: markerData.title,
+                });
+            });
+
+            markers.forEach(function (markerData) {
+                const iconElement = document.createElement('img');
+                iconElement.src = '../../src/map_marker.png';
+                iconElement.style.width = '40px';
+                iconElement.style.height = '40px';
+
+                const advancedMarker = new google.maps.marker.AdvancedMarkerElement({
+                    position: { lat: markerData.lat, lng: markerData.lng },
+                    map: map3,
+                    content: iconElement,
+                    title: markerData.title,
+                });
+            });
+
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(
+                browserHasGeolocation
+                    ? "Error: The Geolocation service failed."
+                    : "Error: Your browser doesn't support geolocation."
+            );
+            infoWindow.open(map1);
+            infoWindow.open(map2);
+            infoWindow.open(map3);
+        }
+
+        window.initMap = initMap;
+    </script>
+
+</head>
+
+<body>
+    <!--botões navbar-->
+    <div class="container-fluid container-dois text-center">
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                    role="tab" aria-controls="home" aria-selected="true">
+                    <i class="fa-solid fa-home"></i>
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="organico-tab" data-bs-toggle="tab" data-bs-target="#lixo_organico"
+                    type="button" role="tab" aria-controls="lixo_organico" aria-selected="false">
+                    Lixo Orgânico
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="reciclavel-tab" data-bs-toggle="tab" data-bs-target="#lixo_reciclavel"
+                    type="button" role="tab" aria-controls="lixo_reciclavel" aria-selected="false">
+                    Lixo Reciclavel
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="verde-tab" data-bs-toggle="tab" data-bs-target="#lixo_verde" type="button"
+                    role="tab" aria-controls="lixo_verde" aria-selected="false">
+                    Lixo Verde
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="perigoso-tab" data-bs-toggle="tab" data-bs-target="#lixo_perigoso"
+                    type="button" role="tab" aria-controls="lixo_perigoso" aria-selected="false">
+                    Lixo Perigoso
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="eletronico-tab" data-bs-toggle="tab" data-bs-target="#lixo_eletronico"
+                    type="button" role="tab" aria-controls="lixo_eletronico" aria-selected="false">
+                    Lixo Eletrônico
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!--home-->
+        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <!--carrosel-->
+            <div class="container-fluid container-tres text-center">
+                <div class="row row-carosel">
+                    <div class="col coluna">
+                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item carrosel active">
+                                    <div class="custom-flex-left d-none"></div>
+                                    <img class="carrosel-img"
+                                        src="https://s2-g1.glbimg.com/1Ykq7w3vRLlK8niz8Kwm82-kDRk=/0x0:1600x1068/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/a/Y/b0yIO5SSeFWRQUEBvdIQ/whatsapp-image-2023-10-14-at-07.48.29.jpeg">
+                                    <div class="carousel-caption custom-flex-center d-none d-md-block">
+                                        <h1 class="carrosel-h1">Crimes ambientais: a cada 400 casos no Brasil, só um
+                                            termina em prisão, apontam CNJ e governo</h1>
+                                        <p class="carrosel-p">Para Nauê Bernardo, advogado ecientista político, a
+                                            situação demonstra que há impunidade para crimes ambientais no Brasil. A
+                                            depender do crime ambiental, ele pode prescrever a partir de 3 anos. Na
+                                            média, para um
+                                            processo do tipo ser julgado no Brasil leva 2 anos e 9 meses.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item carrosel">
+                                    <img src="../src/pilha de roupas.webp" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption custom-flex-center d-none d-md-block">
+                                        <h1>ddede</h1>
+                                    </div>
+                                </div>
+                                <div class="carousel-item carrosel">
+                                    <img src="../src/lixo_reciclavel.png" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption custom-flex-center d-none d-md-block">
+                                        <h1>gjgjgj</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--fim carrosel-->
+                <!--cards-->
+                <h3 class="info-text">INFORMAÇÕES SOBRE LIXO</h3>
+                <div class="row row-card">
+                    <div class="col col-card">
+                        <div class="card card-roupa" style="width: 18rem;">
+                            <img src="../src/aterro.png" class="card-img-top card-image" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">A quantidade de lixo produzido está aumentando</h5>
+                                <p class="card-text">A quantidade de lixo gerado por pessoa ao redor do mundo aumentou
+                                    significativamente nas últimas décadas.
+                                    Estima-se que, em 2021, cada ser humano tenha produzido cerca de 1,7 kg de lixo por
+                                    dia, e esse número deve crescer ainda mais.
+                                    A maioria desse lixo é composto por plásticos, alimentos e resíduos orgânicos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-card">
+                        <div class="card card-roupa" style="width: 18rem;">
+                            <img src="../src/tartarugacanudo.png" class="card-img-top card-image" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Impacto ambiental</h5>
+                                <p class="card-text">O lixo, especialmente o plástico, tem um impacto significativo no
+                                    meio ambiente. Muitos resíduos demoram centenas de anos para se decompor e, enquanto
+                                    isso, poluem solos, rios e oceanos, prejudicando a fauna e a flora.
+                                    Animais marinhos, por exemplo, podem ingerir plásticos ou ficar presos em resíduos,
+                                    o que ameaça sua sobrevivência.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-card">
+                        <div class="card card-roupa" style="width: 18rem;">
+                            <img src="../src/lixo_verde.png" class="card-img-top card-image" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Reciclagem e redução</h5>
+                                <p class="card-text">A reciclagem é uma das maneiras mais eficazes de reduzir a
+                                    quantidade de lixo que vai para aterros sanitários e minimizar o impacto ambiental.
+                                    Muitos materiais, como papel, vidro, metal e alguns plásticos, podem ser reciclados,
+                                    transformando-se em novos produtos e evitando a extração de novos recursos naturais.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Fim dos cards-->
+        </div>
+        <!--Lixo Orgânico-->
+        <div class="tab-pane" id="lixo_organico" role="tabpanel" aria-labelledby="organico-tab">
+            <div class="container conteudo-conteinar text-center">
+                <div class="row row-pages-top">
+                    <div class="col col-pages-top">
+                        <img class="img-pages" src="../src/organico.png" alt="">
+                    </div>
+                    <div class="col col-pages-top justify-content-center align-items-center">
+                        <p class="p-pages">Esse tipo de lixo é importante porque, ao ser separado corretamente, pode ser
+                            compostado e transformado em adubo, contribuindo para a fertilização do solo e reduzindo a
+                            quantidade de resíduos enviados para os aterros sanitários.
+                            O manejo adequado do lixo orgânico é fundamental para a sustentabilidade ambiental, ajudando
+                            a minimizar a poluição e o impacto no meio ambiente.</p>
+                    </div>
+                    <div class="col col-pages-top">
+                        <h5 class="h5-exemplo">Exemplos</h5>
+                        <ul class="lista">
+                            <li class="itens">
+                                <p class="p-pages-top">Casca de Fruta</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Pedaçõs de Carne</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Borras de Café</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Flores Murchas</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Guardanapo de papel usado</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Papel higiênico (em alguns casos)</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row row-pages-bottom">
+                    <div class="col col-bottom">
+                        <h5 class="h5-exemplo">Como realizar o descarte</h5>
+                        <ol>
+                            <li>
+                                <p class="p-pages">Separação do Lixo Coleta Seletiva: Separe o lixo orgânico dos
+                                    recicláveis e do lixo comum. Use sacos ou recipientes diferentes. Materiais
+                                    Orgânicos: Inclua restos de frutas, verduras, cascas, folhas, restos de comida (sem
+                                    plástico ou papel), borra de café, entre outros.</p>
+                            </li>
+                            <li>
+                                <p class="p-pages">Compostagem Composteira: Crie uma composteira em casa. Existem
+                                    diferentes tipos, como as composteiras de fundo aberto, de caixas ou composteiras
+                                    domésticas específicas. Camadas: Comece com uma camada de materiais secos
+                                    (folhas secas, papel picado) e, em seguida, adicione os resíduos orgânicos. Misture
+                                    e mantenha o material arejado. Tempo: O processo de compostagem leva algumas semanas
+                                    a meses. O resultado final será um adubo rico
+                                    em nutrientes.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col">
+                        Column
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Lixo Reciclavel-->
+        <div class="tab-pane" id="lixo_reciclavel" role="tabpanel" aria-labelledby="reciclavel-tab">
+            <div class="container conteudo-conteinar text-center">
+                <div class="row row-pages-top">
+                    <div class="col col-pages-top">
+                        <img class="img-pages" src="../src/lixo_reciclavel.png" alt="">
+                    </div>
+                    <div class="col col-pages-top justify-content-center align-items-center">
+                        <p class="p-pages">A importância da reciclagem pode ser vista em diferentes aspectos.
+                            Primeiramente, ela ajuda a conservar os recursos naturais do nosso planeta. Ao reciclar
+                            materiais, podemos reduzir a extração de matérias-primas, como árvores e
+                            minerais, preservando os ecossistemas e evitando danos irreversíveis.</p>
+                    </div>
+                    <div class="col col-pages-top">
+                        <h5 class="h5-exemplo">Exemplos</h5>
+                        <ul class="lista">
+                            <li class="itens">
+                                <p class="p-pages-top">PAPEL: papelão, cartazes, revistas, jornais, apostilas, cadernos,
+                                    livros, embalagens longa vida</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">PLÁSTICO: embalagens e tampas, copos, garrafas PET, tubos de
+                                    caneta, forros e canaletas de PVC</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">METAL: lata de bebidas e alimentos, tampas, fios, arames</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">VIDRO: garrafas, vidros não contaminados</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row row-pages-bottom">
+                    <div class="col col-bottom">
+                        <h5 class="h5-exemplo">Como realizar o descarte</h5>
+                        <p class="p-pages">
+                            O lixo reciclável deve ser descartado limpo e seco, enquanto os rejeitos (ou lixo comum)
+                            devem ser direcionados para os serviços de coleta urbana, que levam os materiais para
+                            aterros sanitários regulados. também é possivel realizar projetos artesanais sustentaveis,
+                            inclusive em alguns projetos governamentais locais, como por exemplo EAV (Escola de Artes
+                            Recicláveis), cheque se existe algum desses projetos na sua região</p>
+                    </div>
+                    <div class="col">
+                        <div id="map1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Lixo verde-->
+        <div class="tab-pane" id="lixo_verde" role="tabpanel" aria-labelledby="verde-tab">
+            <div class="container conteudo-conteinar text-center">
+                <div class="row row-pages-top">
+                    <div class="col col-pages-top">
+                        <img class="img-pages" src="../src/lixo_verde.png" alt="">
+                    </div>
+                    <div class="col col-pages-top justify-content-center align-items-center">
+                        <p class="p-pages">A importância de seu descarte correto, de acordo com o artigo publicado no
+                            site “Pensamento Verde”, está na geração de energia limpa, criação de artigos decorativos,
+                            preparação de adubos orgânicos e diversas outras utilidades importantes
+                            para o meio-ambiente.</p>
+                    </div>
+                    <div class="col col-pages-top">
+                        <h5 class="h5-exemplo">Exemplos</h5>
+                        <ul class="lista">
+                            <li class="itens">
+                                <p class="p-pages-top">Troncos</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Galhos</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Cascas de árvore</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Grama, folhas(secas ou verdes)</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Flores</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Serragem</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row row-pages-bottom">
+                    <div class="col col-bottom">
+                        <h5 class="h5-exemplo">Como realizar o descarte</h5>
+                        <ol>
+                            <li>
+                                <p class="p-pages">Em pequenas quantidades e bem acondicionados, em sacos resistentes,
+                                    este material pode ser descartado através da coleta domiciliar tradicional. Já
+                                    quando for muito volumoso ou pesado, o ideal é recorrer a um ecoponto.</p>
+                            </li>
+                            <li>
+                                <p class="p-pages">Compostagem:Você pode transformar lixo verde em composto usando uma
+                                    composteira ou montando uma pilha de compostagem em sua própria casa</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col">
+                        Column
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Lixo Perigoso-->
+        <div class="tab-pane" id="lixo_perigoso" role="tabpanel" aria-labelledby="perigoso-tab">
+            <div class="container conteudo-conteinar text-center">
+                <div class="row row-pages-top">
+                    <div class="col col-pages-top">
+                        <img class="img-pages" src="../src/lixo_hospitalar.png" alt="">
+                    </div>
+                    <div class="col col-pages-top justify-content-center align-items-center">
+                        <p class="p-pages">Além dos danos à saúde humana e de outros seres vivos, o contato com lixo
+                            hospitalar pode contaminar o solo, água e ar, prejudicando vários ecossistemas. Um exemplo
+                            ocorre quando os resíduos são deixados em lixões comuns, liberando
+                            substâncias que contaminam o solo</p>
+                    </div>
+                    <div class="col col-pages-top">
+                        <h5 class="h5-exemplo">Exemplos</h5>
+                        <ul class="lista">
+                            <li class="itens">
+                                <p class="p-pages-top">Luvas, máscaras</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Seringas</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Algodão</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Gazes</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Medicação, vacinas vencidas</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Órgãos, tecidos</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row row-pages-bottom">
+                    <div class="col col-bottom">
+                        <h5 class="h5-exemplo">Como realizar o descarte</h5>
+                        <ol>
+                            <li>
+                                <p class="p-pages">Separação do Lixo:<br> GRUPO A (potencialmente infectantes) Que
+                                    tenham presença de agentes biológicos que apresentem risco de infecção, como bolsas
+                                    de sangue contaminado;<br> GRUPO B (químicos) que contenham substâncias
+                                    químicas capazes de causar risco à saúde ou ao meio ambiente, independente de suas
+                                    características inflamáveis, de corrosividade, reatividade e toxicidade. Por
+                                    exemplo, medicamentos para tratamento de câncer, reagentes
+                                    para laboratório e substâncias para revelação de filmes de Raio-X;<br> GRUPO C
+                                    (rejeitos radioativos) Materiais que contenham radioatividade em carga acima do
+                                    padrão e que não possam ser reutilizados, como exames de
+                                    medicina nuclear;<br> GRUPO D (resíduos comuns) Qualquer lixo que não tenha sido
+                                    contaminado ou possa provocar acidentes, como gesso, luvas, gazes, materiais
+                                    passíveis de reciclagem e papéis;<br> GRUPO E (perfurocortantes)
+                                    Objetos e instrumentos que possam furar ou cortar, como lâminas, bisturis, agulhas e
+                                    ampolas de vidro..</p>
+                            </li>
+                            <li>
+                                <p class="p-pages">Os resíduos hospitalares podem ter dois destinos de tratamento:
+                                    incineração ou esterilização. Em ambos o destino será o aterro sanitário, sendo para
+                                    a primeira opção um específico e para a segundo um comum.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col">
+                        <div id="map2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Lixo Eletrônico-->
+        <div class="tab-pane" id="lixo_eletronico" role="tabpanel" aria-labelledby="eletronico-tab">
+            <div class="container conteudo-conteinar text-center">
+                <div class="row row-pages-top">
+                    <div class="col col-pages-top">
+                        <img class="img-pages" src="../src/lixo_eletronico.png" alt="">
+                    </div>
+                    <div class="col col-pages-top justify-content-center align-items-center">
+                        <p class="p-pages">Os equipamentos elétricos e eletrônicos possuem diversos componentes tóxicos
+                            em suas estruturas. Se descartados de maneira incorreta, esses resíduos podem contaminar o
+                            solo e os lençóis freáticos, colocando em risco a saúde pública.
+                            O solo contaminado pode ser prejudicial à saúde de animais e plantas daquele ecossistema, e
+                            produtos cultivados naquela terra também serão contaminados; Quando atingem lagos, rios ou
+                            lençóis freáticos, os metais tóxicos de
+                            eletrônicos descartados incorretamente podem prejudicar a fauna, afetando inclusive a
+                            qualidade dos peixes da região, além de tornar a água e o alimento impróprios para consumo
+                        </p>
+                    </div>
+                    <div class="col col-pages-top">
+                        <h5 class="h5-exemplo">Exemplos</h5>
+                        <ul class="lista">
+                            <li class="itens">
+                                <p class="p-pages-top">Geladeiras, congeladores e outros equipamentos refrigeradores.
+                                </p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Equipamentos de computação e telecomunicações.</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Equipamentos eletrônicos de consumo e painéis solares.</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Televisores, monitores e telas.</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Lâmpadas LED.</p>
+                            </li>
+                            <li class="itens">
+                                <p class="p-pages-top">Máquinas de venda automática.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row row-pages-bottom">
+                    <div class="col col-bottom">
+                        <h5 class="h5-exemplo">Como realizar o descarte</h5>
+                        <p class="p-pages">
+                            A maneira correta de descartar lixo eletrônico é por meio de coleta seletiva. A ABREE
+                            orienta que os dispositivos devem ser descartados inteiros, limpos e desconectados. Além
+                            disso, é importante assegurar-se de apagar todos os dados pessoais contidos
+                            nesses aparelhos. é necessario também separar as pilhas e baterias dos equipamentos, esses
+                            são considerados lixo perigoso, se não for possível sinalize com alguma etiqueta ou fita.
+                        </p>
+                    </div>
+                    <div class="col">
+                        <div id="map3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <!--Script chave do google maps-->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-p8W5ZPB0hzW_TDhslAxM3YJTjTCPh6U&callback=initMap&libraries=geometry,places,marker"
+        async defer></script>
+
+    <!--Script para mudar as tabs-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Get the 'tab' parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const tab = urlParams.get('tab');
+
+        if (tab) {
+            // Deactivate all tabs and content first
+            $('.nav-link').removeClass('active');
+            $('.tab-pane').removeClass('show active');
+
+            // Activate the corresponding tab and content
+            $('#' + tab + '-tab').addClass('active');
+            $('#' + tab).addClass('show active');
+        }
+    </script>
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/2e9951a3e8.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
