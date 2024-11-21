@@ -9,22 +9,30 @@ a:hover{
     color: #fffae1 !important;
 }
 
+.img-logo-rodape{
+    height: 20vh;
+    width: 20vh;
+    background-color: #FFD09B;
+    border: 3px, solid, #322C2B;
+    border-radius: 200px;
+}
+
 footer {
+    height: auto;
     background-color: #1A3636;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
     font-family: 'Inter', sans-serif;
     padding: 0;
-    margin: 0;
+    padding-bottom: 20px;
     color: #FFD09B;
     position: absolute;
     padding-top: 30px;
-    padding-left: 0px;
-    
-
 }
-#rodape2{   
+
+#rodape2{
+    height: 30px;
     display: grid;
     justify-content: center;
     background-color: #677D6A;
@@ -35,8 +43,8 @@ footer {
     bottom: 0%;
     color: #D6BD98;
     position: fixed;
-
 }
+
 #coluna4{
     padding: 0% !important;
     padding-right: 15%;
@@ -45,8 +53,7 @@ footer {
     text-decoration: none;
 }
 #coluna1{
-    padding-bottom: 60%;
-    padding-left: 15%;
+    padding: 0 0 10px 15%;
     
 }
 #coluna2{

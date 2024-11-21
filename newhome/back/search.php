@@ -4,7 +4,6 @@ require_once 'DBConnection.php';
 if (isset($_GET['search'])) {
     $searchQuery = $_GET['search'];
 
-    // Establish database connection
     $conn = DBConnection::getConnection();
     $sql = "SELECT * FROM lixo WHERE nome LIKE :searchQuery";
     $stmt = $conn->prepare($sql);
@@ -12,7 +11,6 @@ if (isset($_GET['search'])) {
 
     $stmt->execute();
 
-    // Fetch all results
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if ($results) {

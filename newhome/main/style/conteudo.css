@@ -1,3 +1,48 @@
+#map1,
+#map2,
+#map3 {
+    height: 100%;
+}
+
+.row-map {
+    margin-top: 1vh !important;
+    min-height: 80vh;
+}
+
+.col-map {
+    padding: 30px;
+    background-color: #E4C59E;
+    border-radius: 10vh;
+    border: #40534C, solid, 5px;
+}
+
+.form-map {
+    width: 70vh !important;
+    justify-content: center;
+    margin-left: 6vh;
+}
+
+#address-list1,
+#address-list2,
+#address-list3 {
+    margin: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#address-list1 p,
+#address-list2 p,
+#address-list3 p {
+    margin: 5px 0;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 .container-dois {
     background-color: #4F6F52;
 }
@@ -17,6 +62,50 @@
     background-color: #322C2B;
     box-shadow: 0 0 5px #FFD09B !important;
     border-color: #4F6F52 !important;
+}
+
+.h2-ecoponto{
+    background-color: #FFF7D1;
+    color: #132929;
+    padding: 5vh;
+    margin-top: 5vh;
+}
+
+.p-ecoponto{
+        font-family: "Quicksand", Arial;
+        font-size: x-large;
+        font-weight: 500;
+        color: #132929 !important;
+        text-align: left;
+}
+
+.destaque{
+    font-family: "Quicksand", Arial;
+    font-size: x-large;
+    font-weight: 700;
+    color:#FEFF9F !important;
+    background-color: #132929;
+}
+
+.semi-destaque{
+    font-family: "Quicksand", Arial;
+    font-size: x-large;
+    font-weight: 700;
+    color:#322C2B !important;
+    background-color:#FEFF9F;
+}
+
+.separar{
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.pergunta{
+    font-family: "Quicksand", Arial;
+    font-size: xx-large;
+    font-weight: 700;
+    color:#FEFF9F !important;
+    background-color: #132929;
 }
 
 .carrosel {
@@ -110,14 +199,6 @@
 
 .card-image {
     height: 150px;
-}
-
-.info-text {
-    margin-top: 10px;
-    font-family: "Quicksand", Arial;
-    font-weight: 400 !important;
-    color: #FFD09B !important;
-    text-decoration-line: underline;
 }
 
 .img-pages {
