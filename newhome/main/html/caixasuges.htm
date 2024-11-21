@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Sugestões</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!--corpo do formulario-->
+    <div class="titulo">
+        <h1>Formulário de Sugestões</h1>
+        
+        <form id="formulario">
+        
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required>
+
+            <label for="sugestoes">Sugestões:</label>
+            <textarea id="sugestoes" name="sugestoes" placeholder="Escreva suas sugestões aqui..." rows="4" required></textarea>
+
+        
+            <button type="submit">Enviar Sugestão</button>
+        </form>
+    </div>
+
+    <script>
+        // Tratamento de função
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault(); // aqui evita que o formulario seja mandado vazio
+
+            // Coleta os valores dos campos
+            const nome = document.getElementById('nome').value;
+            const sobrenome = document.getElementById('sobrenome').value;
+            const sugestoes = document.getElementById('sugestoes').value;
+
+            // Exibe os dados preenchidos no console (pode ser substituído por outra ação)
+            console.log('Nome:', nome);
+            console.log('Sobrenome:', sobrenome);
+            console.log('Sugestões:', sugestoes);
+
+            // Aqui você poderia adicionar código para enviar os dados a um servidor ou banco de dados
+
+            // Mensagem após envio
+            alert("Sua sugestão foi enviada com sucesso! Obrigado.");
+            
+            // Limpa os campos do formulario
+            document.getElementById('formulario').reset();
+        });
+    </script>
+
+</body>
+</html>
