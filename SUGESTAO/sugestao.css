@@ -1,0 +1,78 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8f5;
+    color: #333;
+}
+
+.titulo {
+    text-align: center;
+    margin: 20px auto;
+}
+
+h1 {
+    color: #2e8b57; /* Verde ecológico */
+}
+
+p {
+    color: #555;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, textarea, select, button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+select {
+    height: 40px;
+}
+
+button {
+    background-color: #2e8b57; /* Verde ecológico */
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #3cb371; /* Verde mais claro */
+}
+
+#mensagem {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
