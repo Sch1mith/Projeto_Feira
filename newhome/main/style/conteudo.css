@@ -65,10 +65,14 @@
 }
 
 .h2-ecoponto{
-    background-color: #FFF7D1;
-    color: #132929;
+    background-color:#4F6F52;
+    color:#E4C59E;
     padding: 5vh;
     margin-top: 5vh;
+    border-width: 2vh;
+    border-color: #E4C59E;
+    border-style:solid;
+    border-radius: 50px;
 }
 
 .p-ecoponto{
@@ -109,9 +113,10 @@
 }
 
 .carrosel {
-    height: 60vh !important;
+    height: 70vh !important;
     background-color: #FFECC8 !important;
-    border: #AF8260, solid, 3px;
+    border:#E4C59E, solid, 2vh;
+    
 }
 
 .custom-flex-center {
@@ -130,7 +135,13 @@
     font-optical-sizing: auto;
     font-weight: 500 !important;
     font-style: normal;
-    color: #1A3636 !important;
+    color:#E4C59E !important;
+    margin-top: 0.1%;
+    border-radius: 10px;
+    border-width: 1.8vh;
+    border: #E4C59E;
+    border-style:solid;
+    background-color: #4F6F52;
 }
 
 .custom-flex-left {
@@ -141,13 +152,10 @@
 }
 
 .carrosel-img {
-    position: relative;
-    height: 30vh;
-    width: 50vh;
-    margin-bottom: 5%;
-    margin-top: 1%;
-    margin-left: 40%;
-    border: #322C2B, solid, 2px;
+    width: 100%;
+    height: 100%;
+
+    
 }
 
 .custom-flex-bottom {
@@ -163,10 +171,18 @@
 .carrosel-p {
     font-family: "Quicksand", Arial;
     font-optical-sizing: auto;
-    margin-top: 20px;
-    font-weight: 500 !important;
+    margin-top: 5px;
+    font-size: x-large;
+    /*font-weight: 500 !important;*/
     font-style: normal;
-    color: #1A3636 !important;
+    color:#E4C59E !important;
+    margin-bottom: 50px;
+    width: 180%;
+    border: #E4C59E;
+    background-color: #4F6F52;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1vh;
 }
 
 .carousel-control-prev-icon,
@@ -282,4 +298,45 @@ ol li {
 ol li::before {
     content: counter(list-counter) ". ";
     font-family: 'Courier New', monospace;
+}
+.titulofeed{
+    font-size:xx-large;
+    text-align: center;
+    align-items: center;
+    margin-top: 5vh;
+    color:#E4C59E;
+    border: #E4C59E;
+    border-width: 2vh;
+     border-style: solid; 
+    border-color:#E4C59E;
+    background-color:#4F6F52;
+    width: 100%;
+    border-radius: 50px;   
+}
+.imagemplanta{   
+    
+    border: #E4C59E;
+    border-style: solid;
+    border-width: 2vh;
+    border-radius: 50px;
+    margin-left: 5vh;
+
+
+}
+.paragrafoimg{
+    font-size:xx-large; 
+    margin-top: 5vh;
+    color:#E4C59E;
+    border: #E4C59E;
+    border-width: 2vh;
+     border-style: solid; 
+    border-color:#E4C59E;
+    background-color:#4F6F52;
+    width: 50%;
+    border-radius: 50px;
+    margin-left: 10vh;
+}
+.container5{
+    display: flex;         
+    align-items: center;    
 }
