@@ -67,3 +67,13 @@ footer {
     color: #677D6A;
     text-decoration: none;
 }
+.botaofooter{
+    background-color: #677D6A;
+    color: #E4C59E;
+    border: #E4C59E;
+    border-style: solid;
+    border-radius: 50px;
+    border-width: 0.5vh;
+    width: 30vh;
+
+}
