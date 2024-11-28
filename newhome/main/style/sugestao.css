@@ -3,8 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f8f5;
-    color: #333;
+    background-image: url(/newhome/src/backgroundnov.jpg);
 }
 
 .titulo {
@@ -13,11 +12,12 @@ body {
 }
 
 h1 {
-    color: #2e8b57; /* Verde ecológico */
+    color: #fff;
+
 }
 
 p {
-    color: #555;
+    color: #fff;
 }
 
 form {
@@ -27,6 +27,10 @@ form {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+}
+
+.top {
+    margin-top: 160px;
 }
 
 label {
@@ -42,6 +46,7 @@ input, textarea, select, button {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    box-sizing: border-box;
 }
 
 select {
@@ -49,7 +54,7 @@ select {
 }
 
 button {
-    background-color: #2e8b57; /* Verde ecológico */
+    background-color: #1A3636; /* Verde ecológico */
     color: #fff;
     cursor: pointer;
     border: none;
