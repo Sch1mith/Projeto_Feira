@@ -29,7 +29,49 @@ VALUES
     ('Folhas secas', 'lixo_verde'),
     ('Baterias', 'lixo_perigoso'),
     ('Resíduos eletrônicos', 'lixo_eletronico'),
-    ('Vidros quebrados', 'lixo_reciclavel');
+    ('Vidros quebrados', 'lixo_reciclavel'),
+    ('lata de refrigerante', 'lixo_reciclavel'),
+    ('vidro de perfume', 'lixo_reciclavel'),
+    ('sacola plástica', 'lixo_reciclavel'),
+    ('jornal velho', 'lixo_reciclavel'),
+    ('tampa de garrafa', 'lixo_reciclavel'),
+    ('pote de iogurte', 'lixo_reciclavel'),
+    ('grama cortada', 'lixo_verde'),
+    ('galhos de árvore', 'lixo_verde'),
+    ('flores murchas', 'lixo_verde'),
+    ('restos de poda', 'lixo_verde'),
+    ('cascas de frutas', 'lixo_verde'),
+    ('legumes estragados', 'lixo_verde'),
+    ('plantas mortas', 'lixo_verde'),
+    ('raízes de plantas', 'lixo_verde'),
+    ('ervas daninhas', 'lixo_verde'),
+    ('celular velho', 'lixo_eletrônico'),
+    ('carregador quebrado', 'lixo_eletrônico'),
+    ('bateria de notebook', 'lixo_eletrônico'),
+    ('teclado antigo', 'lixo_eletrônico'),
+    ('mouse quebrado', 'lixo_eletrônico'),
+    ('monitor LCD', 'eletrônico'),
+    ('televisão antiga', 'eletrônico'),
+    ('impressora usada', 'eletrônico'),
+    ('rádio portátil', 'eletrônico'),
+    ('fone de ouvido', 'eletrônico'),
+    ('tablet quebrado', 'eletrônico'),
+    ('caixa de som antiga', 'eletrônico'),
+    ('câmera digital velha', 'eletrônico'),
+    ('console de videogame', 'eletrônico'),
+    ('controle remoto', 'eletrônico'),
+    ('micro-ondas quebrado', 'eletrônico'),
+    ('notebook antigo', 'eletrônico'),
+    ('cabo HDMI', 'eletrônico'),
+    ('pendrive danificado', 'eletrônico'),
+    ('relógio digital', 'eletrônico')
+
+
+
+    
+
+
+    
 
 google maps api snippnets --> https://console.cloud.google.com/google/maps-apis/build;filters=%7B"platformFilters":%5B"WEB"%5D,"useCaseFilters":%5B"CURRENT_LOCATION","VISUALIZE_DATA"%5D,"codeTypeFilters":%5B%5D%7D?hl=pt-br&project=projeto-feira-439802
 
