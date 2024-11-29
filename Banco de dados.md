@@ -21,6 +21,16 @@ CREATE table lixo (
     nome varchar(250) not null
 );
 
+INSERT INTO lixo (nome, tipo)
+VALUES 
+    ('Restos de comida', 'lixo_organico'),
+    ('Papelão', 'lixo_reciclavel'),
+    ('Garrafas PET', 'lixo_reciclavel'),
+    ('Folhas secas', 'lixo_verde'),
+    ('Baterias', 'lixo_perigoso'),
+    ('Resíduos eletrônicos', 'lixo_eletronico'),
+    ('Vidros quebrados', 'lixo_reciclavel');
+
 google maps api snippnets --> https://console.cloud.google.com/google/maps-apis/build;filters=%7B"platformFilters":%5B"WEB"%5D,"useCaseFilters":%5B"CURRENT_LOCATION","VISUALIZE_DATA"%5D,"codeTypeFilters":%5B%5D%7D?hl=pt-br&project=projeto-feira-439802
 
 //color pallets
