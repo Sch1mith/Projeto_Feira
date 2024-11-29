@@ -65,14 +65,38 @@
 }
 
 .h2-ecoponto{
-    background-color:#132929;
+    background-color:#4F6F52;
     color:#E4C59E;
     padding: 5vh;
     margin-top: 5vh;
     border-width: 2vh;
-    border-color: #be9b6f;
+    border-color: #E4C59E;
     border-style:solid;
     border-radius: 50px;
+}
+
+.p-ecoponto{
+        font-family: "Quicksand", Arial;
+        font-size: x-large;
+        font-weight: 500;
+        color: #132929 !important;
+        text-align: left;
+}
+
+.destaque{
+    font-family: "Quicksand", Arial;
+    font-size: x-large;
+    font-weight: 700;
+    color:#FEFF9F !important;
+    background-color: #132929;
+}
+
+.semi-destaque{
+    font-family: "Quicksand", Arial;
+    font-size: x-large;
+    font-weight: 700;
+    color:#322C2B !important;
+    background-color:#FEFF9F;
 }
 
 .separar{
@@ -91,7 +115,9 @@
 .carrosel {
     height: 70vh !important;
     background-color: #FFECC8 !important;
-    border:#70583a, solid, 3px;
+    border:#E4C59E, solid, 2vh;
+
+    
 }
 
 .custom-flex-center {
@@ -107,17 +133,21 @@
 
 .carrosel-h1 {
     font-family: "Quicksand", Arial;
-    font-optical-sizing: auto;
+    font-optical-sizing: auto;  
     font-weight: 500 !important;
     font-style: normal;
     color:#E4C59E !important;
-    margin-top: 0.1%;
-    border-radius: 10px;
-    border-width: 1.8vh;
-    border: #be9b6f;
+    padding: 2vh;
+    border-radius: 3vh;
+    border-width: 2vh;
+    border: #E4C59E;
     border-style:solid;
-    background-color:#132929;
+    background-color: #4F6F52;
+    width: 150%;
 }
+
+
+
 
 .custom-flex-left {
     display: flex;
@@ -129,6 +159,8 @@
 .carrosel-img {
     width: 100%;
     height: 100%;
+
+    
 }
 
 .custom-flex-bottom {
@@ -144,17 +176,18 @@
 .carrosel-p {
     font-family: "Quicksand", Arial;
     font-optical-sizing: auto;
-    margin-top: 5px;
-    font-size: x-large;
+    margin-top: 0.5vh;
+    font-size: x-large; 
+    /*font-weight: 500 !important;*/
     font-style: normal;
     color:#E4C59E !important;
-    margin-bottom: 50px;
     width: 180%;
-    border: #be9b6f;
-    background-color:#132929;
-    border-radius: 10px;
+    border: #E4C59E;
+    background-color: #4F6F52;
+    border-radius: 3vh;
     border-style: solid;
     border-width: 1vh;
+    position: relative;
 }
 
 .carousel-control-prev-icon,
@@ -271,38 +304,39 @@ ol li::before {
     content: counter(list-counter) ". ";
     font-family: 'Courier New', monospace;
 }
-
 .titulofeed{
     font-size:xx-large;
     text-align: center;
     align-items: center;
     margin-top: 5vh;
     color:#E4C59E;
-    border: #be9b6f;
-    border-width: 3px;
+    border: #E4C59E;
+    border-width: 2vh;
      border-style: solid; 
     border-color:#E4C59E;
-    background-color:#132929;
+    background-color:#4F6F52;
     width: 100%;
     border-radius: 50px;   
 }
 .imagemplanta{   
-    border: #be9b6f;
+    
+    border: #E4C59E;
     border-style: solid;
-    border-width: 3px;
+    border-width: 2vh;
     border-radius: 50px;
     margin-left: 5vh;
-}
 
+
+}
 .paragrafoimg{
     font-size:xx-large; 
     margin-top: 5vh;
-    color:#E4C59E;
-    border: #be9b6f;
-    border-width: 3px;
+    color:#132929;
+    border: #E4C59E;
+    border-width: 2vh;
      border-style: solid; 
     border-color:#E4C59E;
-    background-color:#132929;
+    background-color: white;
     width: 50%;
     border-radius: 50px;
     margin-left: 10vh;
@@ -310,4 +344,53 @@ ol li::before {
 .container5{
     display: flex;         
     align-items: center;    
+}
+
+@media screen and (max-width:1140px){
+    
+    .container5{
+        flex-direction: column;
+        flex-direction: column-reverse ;
+        align-items: center;
+        text-align: center;
+    }
+    .paragrafoimg{
+        width: 101%;
+        margin-right: 68px;
+        font-size:large;  
+        border-width: 10px;
+        background-color: white;
+        border-radius: 30px;
+        color: #132929;
+        height: 290px;
+        border-width: 8px;
+        text-align: center;
+
+        
+    }
+
+    .imagemplanta{
+        width: 100%;
+        height: 80%;
+        margin-right: 49px;
+    }
+
+    .col-card {
+        margin: right 10vh;
+        margin-top: 20vh;
+    }
+    /*a partir daqui é pagina de lixo*/
+    .p-pages {
+        font-family: "Quicksand", Arial;
+        font-size:smaller;
+        font-weight: 500;
+        color: #132929 !important;
+    }
+    .h5-exemplo{
+        font-size: large;
+    }
+    .p-pages-top{
+        font-size: smaller;
+    }
+
 }

@@ -77,3 +77,18 @@ footer {
     width: 30vh;
 
 }
+    @media screen and (max-width:1140px){
+        #coluna2{
+            display: none;
+        }
+        #coluna3{
+            display: none;
+        }
+        #coluna4{
+            margin-left: 80px;
+        }
+        .botaofooter{
+            width: 20vh;
+            mar
+        }
+    }
