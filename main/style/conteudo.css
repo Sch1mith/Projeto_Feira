@@ -1,6 +1,7 @@
 #map1,
 #map2,
 #map3 {
+    width: 100%;
     height: 100%;
 }
 
@@ -17,7 +18,7 @@
 }
 
 .form-map {
-    width: 70vh !important;
+    width: 20vh;
     justify-content: center;
     margin-left: 6vh;
 }
@@ -232,6 +233,8 @@
     background-color: #E4C59E;
     border-radius: 10vh;
     border: #40534C, solid, 5px;
+    font-size: smaller;
+    height: 80%;
 }
 
 .row-pages-bottom {
@@ -240,6 +243,7 @@
 
 .conteudo-conteinar {
     max-width: 180vh !important;
+    height: 60%;
 }
 
 .col-pages-top {
@@ -376,8 +380,10 @@ ol li::before {
     }
 
     .col-card {
-        margin: right 10vh;
-        margin-top: 20vh;
+        display:flex;
+        margin-left: -5%;
+        
+        margin-top: 10%;
     }
     /*a partir daqui é pagina de lixo*/
     .p-pages {
