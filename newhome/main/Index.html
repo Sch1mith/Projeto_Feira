@@ -24,13 +24,13 @@
         rel="stylesheet">
 
     <!--css index-->
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="/main/style/index.css">
     <!--css header-->
-    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="/main/style/header.css">
     <!--css conteudo-->
-    <link rel="stylesheet" href="style/conteudo.css">
+    <link rel="stylesheet" href="/main/style/conteudo.css">
     <!--css footer-->
-    <link rel="stylesheet" href="style/rodape.css">
+    <link rel="stylesheet" href="/main/style/rodape.css">
 
 </head>
 
@@ -45,8 +45,8 @@
             </div>
             <div class="row row-header justify-content-center">
                 <div class="col-lg-10 col-header">
-                    <form class="d-flex" role="search">
-                        <input class="form-control" type="search" placeholder="O que deseja descartar?"
+                    <form class="d-flex" method="post" action="/back/search.php" role="search">
+                        <input class="form-control" type="search" name="termo" placeholder="O que deseja descartar?"
                             aria-label="pesquisa">
                         <button class="btn search-button btn-outline-success ms-2" type="submit">
                             <i class="fa-solid fa-search"></i>
@@ -71,7 +71,7 @@
         <div id="coluna2">
             <h3>Quem somos</h3>
 
-            <a href="html/sobrenos.html">
+            <a href="/main/html/sobrenos.html">
                 <p>Sobre nós</p><br>
             </a>
 
@@ -100,10 +100,10 @@
             <p>Nos envie sugestões de eco Pontos para podermos<br>
                 ajudá-lo a descartar com segurança!</p>
 
-                <a href="/main/html/sugestao.html">
-            <button class="botaofooter">
-                <i class="fa-solid fa-envelope"></i>
-            </button></a>
+            <a href="/main/html/sugestao.html">
+                <button class="botaofooter">
+                    <i class="fa-solid fa-envelope"></i>
+                </button></a>
         </div>
 
 
@@ -132,11 +132,10 @@
         </script>
     <script>
         $(function () {
-            $("#header").load("html/header.html");
-            $("#conteudo").load("html/conteudo.html");
-            $("#footer").load("html/rodape.html");
+            $("#conteudo").load("/main/html/conteudo.html");
         });
     </script>
+
 </body>
 
 </html>
