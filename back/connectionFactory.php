@@ -7,8 +7,8 @@ class DBConnection {
     private function __construct() {
         $host = 'localhost'; // Database host
         $dbname = 'projeto'; // Database name
-        $username = 'root';  // Database username
-        $password = '';      // Database password (change it for your environment)
+        $username = 'guilherme';  // Database username
+        $password = 'ggfih0098@';      // Database password (change it for your environment)
 
         try {
             $this->conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
